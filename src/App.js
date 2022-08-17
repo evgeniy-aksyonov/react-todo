@@ -49,8 +49,7 @@ function App() {
   // Checks if localStorage has todos and sets them to state
   const getFromLocalStorage = () => {
     if (localStorage.getItem('todos')) {
-      let todoLocal = JSON.parse(localStorage.getItem('todos'));
-      setTodos(todoLocal);
+      setTodos(JSON.parse(localStorage.getItem('todos')));
     } else {
       localStorage.setItem('todos', JSON.stringify([]));
     }
