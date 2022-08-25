@@ -1,3 +1,4 @@
+import { TodoSelect } from './TodoSelect';
 import React from 'react';
 
 const Form = ({ inputText, setInputText, todos, setTodos, setFilter }) => {
@@ -34,17 +35,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setFilter }) => {
       <button onClick={submitTodoHandler} type="submit" className="todo-button">
         <i className="fas fa-plus-square"></i>
       </button>
-      <div className="todo-select">
-        <select
-          onChange={setFilterHandler}
-          name="todos"
-          className="filter-todo"
-        >
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
+      <TodoSelect setFilterHandler={setFilterHandler} />
     </form>
   );
 };
